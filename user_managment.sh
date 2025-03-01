@@ -68,6 +68,7 @@ sudo cat "Welcone!!!!" > /etc/skel/welcome.txt
 
 # 9.
 sudo useradd -m testuser
+ls /home/testuser
 sudo userdel -r testuser
 
 # 10.
@@ -75,5 +76,58 @@ grep 'serena' /etc/passwd
 sudo chsh -s /usr/bash
 grep 'serena' /etc/passwd
 
+
+##########################################################
+# Chapter 29
+##########################################################
+
+# 1.
+sudo passwd serena # in prompt write hunter2
+
+# 2. 
+sudo passwd venus
+sudo grep venus /etc/shadow
+sudo usermod -L venus
+sudo grep venus /etc/shadow
+
+# 3.
+sudo passwd -d serena
+sudo grep serena /etc/shadow
+
+# 4.
+#  Locking disable using password and can be enable again. Disabling delete the password and need create another one on restore.
+
+# 5.
+su - serena
+passwd
+
+# 6.
+sudo chage -M 10 serena
+
+# 7.
+sudo vim /etc/login.defs # find row  PASS_MAX_DAYS and change 9999 to 10
+# or use regex to replace
+sudo sed -i 's/^PASS_MAX_DAYS[[:space:]]\+99999/PASS_MAX_DAYS   10/' /etc/login.defs
+
+# 8.
+sudo cp /etc/shadow /etc/shadow_backup
+sudo vi /etc/shadow
+# yes, serena can login with password hunter42
+
+# 9. 
+# vipw lock file for edit to another users/shels. Prevent from 2 people or 2 places to edit sensitive files.
+
+# 10.
+chsh -l
+cat /etc/shells
+# the output is equal
+
+# 11.
+# -d option
+
+# 12.
+# The char "!" at begining of password hash means that password is locked
+grep serena /etc/shadow 
+sudo passwd -S serena
 
 
