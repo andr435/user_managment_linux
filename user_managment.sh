@@ -157,3 +157,28 @@ cat "alias cleann='clear'" >> /etc/bashrc
 # If any of the files exist but cannot be read, bash reports an error: Yes it matter.
 
 
+#####################################################################
+# Chapter 31
+#####################################################################
+
+# 1.
+sudo groupadd tennis
+sudo groupadd football
+sudo groupadd sports
+
+# 2.
+sudo usermod -aG tennis,sports venus
+
+# 3.
+sudo groupmode -n foot football
+
+# 4.
+sudo vi /etc/group
+
+# 5.
+sudo id serena
+
+# 6.
+sudo gpasswd -A serena foot,sports
+
+
