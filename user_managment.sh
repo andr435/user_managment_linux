@@ -182,3 +182,66 @@ sudo id serena
 sudo gpasswd -A serena foot,sports
 
 
+######################################################################
+# Chapter 32
+######################################################################
+
+# 1.
+mkdir ~/permissions ; touch ~/permissions/test.txt
+
+# 2.
+cp /etc/crontab ~/permissions/
+# the file belongs to me
+
+# 3.
+sudo touch ~/permissions/root.txt
+
+# 4.
+# belongs to root
+
+# 5.
+sudo chown andrey ~/permissions/*
+
+# 6.
+chmod 744 ~/permissions/*
+
+# 7.
+# Yes
+
+# 8.
+# No
+
+# 9.
+# Yes
+
+# 10.
+# No
+
+# 11a.
+umask # octa
+umask -S # symbolik
+
+# 11b.
+umask u=rwx,g=,o=
+touch ~/permissions/mask_test
+
+# 12.
+sudo touch ~/permissions/root_test.txt
+sudo chmod o=r ~/permissions/root_test.txt
+vim ~/permissions/root_test.txt # fail
+
+# 13a.
+touch ~/permissions/user_test.txt
+chmod o=r ~/permissions/user_tes.txt
+# read yes, write no
+
+# 13b.
+# root can read and write
+
+# 14.
+mkdir ~/permissions/test
+sudo groupadd test
+sudo chgrp test ~/permissions/test
+sudo cmod 755 ~/permissions/test
+
+
