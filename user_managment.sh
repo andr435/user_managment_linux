@@ -131,3 +131,29 @@ grep serena /etc/shadow
 sudo passwd -S serena
 
 
+################################################################
+# Chapter 30
+################################################################
+
+# 1.
+ls -a ~/.bash* ~/.prof* /etc/prof* /etc/bash*
+
+# 2.
+# Readed
+
+# 3.
+cat "alias clean='clear'" >> ~/.bashrc
+cat "alias cl='clear'" >> ~/.bash_profile
+cat "alias cle='clear'" >> /etc/profile
+cat "alias cleann='clear'" >> /etc/bashrc
+
+# 4.
+# Done
+
+# 5. 
+# Not
+
+# 6.
+# If any of the files exist but cannot be read, bash reports an error: Yes it matter.
+
+
