@@ -245,3 +245,30 @@ sudo chgrp test ~/permissions/test
 sudo cmod 755 ~/permissions/test
 
 
+#####################################################
+# Chapter 33
+#####################################################
+
+# 1a.
+mkdir ~/permissions/test
+chown $USER:sports ~/permissions/test
+
+# 1b.
+chmod g+x ~/permissions/test
+
+# 1c.
+chmod g+s ~/permissions/test
+
+# 1d.
+chmod +t ~/permissions/test
+
+# 1e.
+# Done
+ 
+# 2.
+ls -l /usr/bin/passwd
+sudo chmod -s /usr/bin/passwd
+sudo vim /usr/bin/passwd
+sudo chmod +s /usr/bin/passwd
+
+
