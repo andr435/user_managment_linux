@@ -272,3 +272,38 @@ sudo vim /usr/bin/passwd
 sudo chmod +s /usr/bin/passwd
 
 
+#######################################################
+# Chapter 35
+#######################################################
+
+# 1.
+echo "some text" > summer.txt
+echo "another text" > winter.txt
+
+# 2.
+ln winter.txt hlwinter.txt
+
+# 3.
+ln -il 
+
+# 4.
+find / -inum 17134782 2> /dev/null
+
+# 5.
+# Name and content of file
+
+# 6.
+ln -s summer.txt slsummer.txt
+
+# 7.
+find / -inum 2 2> /dev/null
+# They are hard linked
+
+# 8.
+# Not
+
+# 9.
+# See soft link
+
+# 10.
+find ~ ! -links 1 -type f
